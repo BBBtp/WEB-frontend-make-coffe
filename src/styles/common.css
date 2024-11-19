@@ -1,0 +1,106 @@
+:root {
+    --textColor: #573821;
+    --buttonColor: #CCE3DE;
+    --footerColor: #3D2717;
+    --cardColor: #EAF4F4;
+    --header-height: 100px; /* Высота хедера */
+}
+.custom-button{
+    background: var(--textColor);
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    border-radius: 23px;
+    border: none;
+}
+.custom-button-shop{
+    background: var(--textColor);
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+
+}
+.custom-button-shop:hover {
+    background-color: var(--footerColor);
+}
+.custom-button.promo{
+    font-size: 24px;
+}
+.custom-button:hover {
+    background-color: var(--footerColor); /* Цвет кнопки при наведении */
+}
+
+.logout-button:hover {
+    background-color: #cc5555; /* Цвет кнопки при наведении */
+}
+
+.img-custom:hover{
+    color: white;
+}
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--textColor);
+
+    margin: 0;
+    padding: 0;
+        box-sizing: border-box;
+    display: flex;
+
+    flex: 1;
+}
+.min-vh-100 {
+    min-height: 100vh; /* Минимальная высота на весь экран */
+}
+.img-width {
+    max-width: 500px;
+    height: auto;
+}
+
+#root {
+    flex: 1;
+}
+.backkkk{
+    background-color: var(--footerColor); !important;
+}
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    min-height: 100%;
+    padding: 0 2%;
+
+}
+
+.footer {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6,p {
+    color: var(--textColor)
+}
+
+p {
+    font-weight: normal;
+    font-size: 24px;
+}
+h1 {
+    font-weight: bold;
+}
+.custom-table th, .custom-table td {
+    color: var(--textColor); /* Устанавливает красный цвет текста */
+    font-size: 24px;
+}
+text {
+    color: var(--textColor);
+    font-weight: bold;
+    font-size: 40px;
+}

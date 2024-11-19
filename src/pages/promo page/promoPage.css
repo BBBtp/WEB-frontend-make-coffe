@@ -1,0 +1,23 @@
+/* promoPage.css */
+.cup-coffee-img {
+    width: 350px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.left-hand-img-container,
+.right-hand-img-container {
+    width:auto;
+    height: auto;
+}
+
+.left-hand-img-container img,
+.right-hand-img-container img {
+    width: 100%;
+    height: auto;
+}
+
+.text {
+    font-size: 64px;
+    font-weight: 900;
+}

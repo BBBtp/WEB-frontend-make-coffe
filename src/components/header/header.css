@@ -1,0 +1,35 @@
+.sticky-header {
+    position: sticky; !important;
+    top: 0; /* отступ от верха */
+    z-index: 10000;
+    height: 80px;
+    /* убедитесь, что он будет отображаться поверх других элементов */
+    background-color: white; /* фоновый цвет */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* добавьте тень для эффекта */
+    width: 100%;
+}
+
+.logo-container {
+    display: flex; /* Располагает элементы в строку */
+    align-items: center; /* Центрирует по вертикали */
+    gap: 10px; /* Расстояние между изображением и текстом */
+}
+
+.logo-image {
+    width: 50px; /* Задайте размер изображения */
+    height: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    text-align: left;
+
+}
+
+.logo-text text {
+    font-size: 16px; /* Размер текста */
+    color: var(--textColor);
+    font-weight: 800;
+}

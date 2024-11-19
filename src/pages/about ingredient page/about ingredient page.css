@@ -1,0 +1,5 @@
+.divider {
+    border: 0;
+    border-top: 2px solid var(--textColor); /* Цвет разделителя */
+}
+

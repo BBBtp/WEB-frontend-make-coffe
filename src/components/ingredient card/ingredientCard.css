@@ -1,0 +1,16 @@
+.card {
+    position: relative; /* Обеспечивает локальный контекст позиционирования */
+    z-index: 1; /* Карточки не перекрывают хедер */
+    background-color: white;
+    border-radius: 23px;
+    border-color: var(--textColor);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.text-multiline-truncate {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3; /* Обрезать после 3 строк */
+}

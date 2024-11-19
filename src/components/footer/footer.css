@@ -1,0 +1,21 @@
+footer {
+    background-color: var(--footerColor); /* Темный фон футера */
+    color: #fff; /* Белый текст */
+    padding: 20px; /* Отступы */
+    margin-top: auto; /* Фиксация футера внизу */
+    position: relative; /* Относительное позиционирование */
+    width: 100%; /* Ширина на 100% */
+}
+
+.name {
+
+    margin-right: 20px; /* Устанавливаем отступ справа */
+}
+
+.no-bullets{
+    list-style-type: none;
+}
+
+.name:last-child {
+    margin-right: 0;
+}
