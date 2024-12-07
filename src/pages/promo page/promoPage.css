@@ -1,23 +1,41 @@
-/* promoPage.css */
 .cup-coffee-img {
-    width: 350px;
+    width: 100%; /* Адаптивный размер для телефонов и планшетов */
     height: auto;
     margin-top: 20px;
 }
 
 .left-hand-img-container,
 .right-hand-img-container {
-    width:auto;
+    width: 100%; /* Изображения будут занимать всю ширину родительского контейнера */
     height: auto;
 }
 
 .left-hand-img-container img,
 .right-hand-img-container img {
-    width: 100%;
+    width: 100%; /* Изображения будут занимать всю ширину родительского контейнера */
     height: auto;
 }
 
 .text {
-    font-size: 64px;
+    font-size: 64px; /* Оригинальный размер текста для планшетов и больше */
     font-weight: 900;
+}
+
+@media (max-width: 576px) { /* Адаптация для телефонов */
+    .text {
+        font-size: 34px; /* Уменьшенный размер шрифта для телефонов */
+        text-align: left; /* Центрировать текст */
+    }
+
+}
+
+@media (min-width: 576px) { /* Адаптация для планшетов и больше */
+    .text {
+        font-size: 64px; /* Оригинальный размер шрифта для планшетов и больше */
+        text-align: left; /* Выровнять текст по левому краю */
+    }
+
+    h3 {
+        text-align: left; /* Выровнять текст по левому краю */
+    }
 }

@@ -1,35 +1,62 @@
 .sticky-header {
-    position: sticky; !important;
-    top: 0; /* отступ от верха */
-    z-index: 10000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     height: 80px;
-    /* убедитесь, что он будет отображаться поверх других элементов */
-    background-color: white; /* фоновый цвет */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* добавьте тень для эффекта */
-    width: 100%;
+    background-color: white; /* Белый фон */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень */
 }
 
 .logo-container {
-    display: flex; /* Располагает элементы в строку */
-    align-items: center; /* Центрирует по вертикали */
-    gap: 10px; /* Расстояние между изображением и текстом */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между логотипом и текстом */
 }
 
 .logo-image {
-    width: 50px; /* Задайте размер изображения */
+    width: 50px;
     height: auto;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    text-align: left;
-
 }
 
 .logo-text text {
-    font-size: 16px; /* Размер текста */
+    font-size: 16px;
     color: var(--textColor);
     font-weight: 800;
+}
+
+.full-screen-menu .offcanvas {
+    width: 100% !important; /* Перекрыть всю ширину */
+    height: 100% !important; /* Перекрыть всю высоту */
+    background-color: #fff; /* Фон меню */
+}
+
+.full-screen-menu .offcanvas-header {
+    border-bottom: 1px solid #ddd;
+}
+
+.full-screen-menu .menu-item {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--textColor);
+    text-decoration: none;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+
+@media (max-width: 992px) {
+    .menu-item {
+        font-size: 16px; /* Уменьшаем текст для мобильных */
+    }
 }

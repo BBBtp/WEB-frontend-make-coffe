@@ -53,25 +53,27 @@ function AboutIngredientPage() {
     }
     const imageUrl = ingredient.image_url || placeholder;
     return (
-
         <Container className="py-5">
             <Breadcrumbs />
             <div className="row align-items-center mt-3 mb-5">
                 <div className="col-md-6">
+
                     <img
                         src={imageUrl}
                         alt={ingredient.ingredient_name}
                         className="img-fluid"
                     />
                 </div>
-                <div className="col-md-6">
-                    <h2 className="mb-5 fw-bold">{ingredient.ingredient_name}</h2>
-                    <h3 className="fw-bold">{ingredient.price} ₽/{ingredient.unit}</h3>
+                <div className="col-md-6  mt-3">
+                    <h2 className="mb-3 fw-bold ">{ingredient.ingredient_name}</h2>
+                    <div className="price-badge">
+                        <h5 className="fw-medium text-white mb-0">{ingredient.price} ₽/{ingredient.unit}</h5>
+                    </div>
                 </div>
             </div>
 
             {/* Раздел с описанием */}
-            <div className="text-start">
+            <div className="justify-content-start">
                 <h3 className="fw-bold">Описание</h3>
                 <hr className="mx-auto mb-4 divider" />
                 <p className="mx-auto text-start recipe-card">

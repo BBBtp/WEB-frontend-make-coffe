@@ -3,3 +3,34 @@
     border-top: 2px solid var(--textColor); /* Цвет разделителя */
 }
 
+.price-badge {
+    display: inline-block;
+    background-color: var(--textColor); /* Коричневый фон для ценового контура */
+    border-radius: 50px; /* Круглый контур */
+    padding: 5px 10px; /* Устанавливаем отступы */
+}
+
+@media (max-width: 576px) { /* Адаптация для телефонов */
+    .row {
+        flex-direction: column; /* Название ингредиента над изображением на мобильных устройствах */
+        gap: 12px;
+    }
+
+    .col-md-6 {
+        width: 100%; /* Устанавливаем ширину 100% на мобильных устройствах */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) { /* Адаптация для планшетов */
+    .price-badge {
+        display: inline-block;
+        background-color: var(--textColor);
+        border-radius: 50px;
+        padding: 6px 12px;
+    }
+
+    .row {
+        flex-direction: row;
+        gap: 24px; /* Увеличиваем расстояние между изображением и ценой на планшетах */
+    }
+}

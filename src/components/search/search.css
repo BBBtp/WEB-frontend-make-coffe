@@ -1,6 +1,28 @@
 .search {
-    width: 600px;
+    width: 600px; /* Делаем форму поиска адаптивной */
     height: 50px;
     border-radius: 23px;
     border-color: var(--textColor);
+}
+
+@media (max-width: 576px) { /* Адаптация для телефонов */
+    .search {
+        width: 100%; /* Полная ширина для телефонов */
+    }
+
+    .custom-button-shop {
+        width: 50px; /* Уменьшаем ширину кнопки для телефонов */
+        height: 50px; /* Высота остаётся прежней */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) { /* Адаптация для планшетов */
+    .search {
+        width: 80%; /* Увеличиваем ширину до 80% для планшетов */
+    }
+
+    .custom-button-shop {
+        width: 60px; /* Увеличиваем ширину кнопки для планшетов */
+        height: 50px; /* Высота остаётся прежней */
+    }
 }

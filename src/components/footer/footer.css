@@ -2,20 +2,32 @@ footer {
     background-color: var(--footerColor); /* Темный фон футера */
     color: #fff; /* Белый текст */
     padding: 20px; /* Отступы */
-    margin-top: auto; /* Фиксация футера внизу */
-    position: relative; /* Относительное позиционирование */
+    margin-top: auto; /* Для прилипания к низу страницы */
     width: 100%; /* Ширина на 100% */
 }
 
-.name {
-
-    margin-right: 20px; /* Устанавливаем отступ справа */
+footer a {
+    text-decoration: none;
+}
+.text-down {
+    font-size: 10px;
 }
 
-.no-bullets{
-    list-style-type: none;
+footer img {
+    width: 30px; /* Размер иконок */
+    height: 30px;
+    transition: transform 0.2s ease;
 }
 
-.name:last-child {
-    margin-right: 0;
+footer img:hover {
+    transform: scale(1.1); /* Увеличение иконок при наведении */
+}
+
+@media (max-width: 768px) {
+    footer h6 {
+        text-align: center; /* Выравнивание имени по центру на маленьких экранах */
+    }
+    .text-dowm {
+        font-size: 5px;
+    }
 }

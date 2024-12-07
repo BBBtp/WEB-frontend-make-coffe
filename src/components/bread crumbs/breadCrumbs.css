@@ -23,3 +23,25 @@
 .breadcrumb-item a:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 576px) { /* Адаптация для телефонов */
+    .breadcrumb-item {
+        font-size: 12px; /* Уменьшаем шрифт для телефонов */
+    }
+
+    .breadcrumb {
+        flex-wrap: wrap; /* Делаем breadcrumb компоненты переносимыми */
+        gap: 4px; /* Уменьшаем расстояние между элементами */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) { /* Адаптация для планшетов */
+    .breadcrumb-item {
+        font-size: 13px; /* Уменьшаем шрифт для планшетов */
+    }
+
+    .breadcrumb {
+        flex-wrap: wrap; /* Делаем breadcrumb компоненты переносимыми */
+        gap: 6px; /* Увеличиваем расстояние между элементами */
+    }
+}
