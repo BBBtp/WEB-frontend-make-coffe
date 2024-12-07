@@ -1,16 +1,15 @@
 import './header.css';
-import { Button, Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
+import {Button, Container, Nav, Navbar, Offcanvas} from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useState } from 'react'; // Импортируем useState
+import { useState } from 'react';
 import logoImg from '../../assets/coffee.svg';
 
 function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // Состояние для управления меню
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen); // Переключение состояния
-
-    const closeMenu = () => setIsMenuOpen(false); // Закрытие меню
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const closeMenu = () => setIsMenuOpen(false);
 
     return (
         <motion.div
@@ -31,17 +30,30 @@ function Header() {
                         </motion.div>
                     </Navbar.Brand>
 
-                    {/* Кнопка для коллапса */}
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={toggleMenu} />
+                    {/* Навигация для больших экранов */}
+                    <Nav className="d-none d-lg-flex gap-3 justify-content-end align-items-center">
+                        <Nav.Link as={Link} to="/ingredients" className="menu-item">
+                            <Button variant={'success'} className={'custom-button'}>
+                                Ингредиенты
+                            </Button>
+                        </Nav.Link>
+                    </Nav>
 
-                    {/* Offcanvas - полное перекрытие */}
+                    {/* Кнопка для мобильных устройств */}
+                    <Navbar.Toggle
+                        aria-controls="responsive-navbar-nav"
+                        onClick={toggleMenu}
+                        className="d-lg-none"
+                    />
+
+                    {/* Offcanvas меню для мобильных устройств */}
                     <Navbar.Offcanvas
                         id="responsive-navbar-nav"
                         aria-labelledby="responsive-navbar-nav"
-                        placement="start" // Меню будет выезжать слева
-                        className="full-screen-menu"
-                        show={isMenuOpen} // Управляем видимостью через состояние
-                        onHide={closeMenu} // Закрытие при клике на фон
+                        placement="start"
+                        className="full-screen-menu d-lg-none"
+                        show={isMenuOpen}
+                        onHide={closeMenu}
                     >
                         <Offcanvas.Header closeButton>
                             <Offcanvas.Title>
@@ -50,7 +62,6 @@ function Header() {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="flex-column gap-3 align-items-start">
-                                {/* Кликаем и закрываем меню */}
                                 <Nav.Link as={Link} to="/ingredients" className="menu-item" onClick={closeMenu}>
                                     Ингредиенты
                                 </Nav.Link>
@@ -66,7 +77,7 @@ function Header() {
 export default Header;
 
 export const logoAnimation = {
-    hidden: (custom) => ({
+    hidden: () => ({
         opacity: 0,
     }),
     visible: {

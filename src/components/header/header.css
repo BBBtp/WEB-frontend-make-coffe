@@ -1,16 +1,19 @@
+
+
 .sticky-header {
     position: sticky;
     top: 0;
     z-index: 1000;
     height: 80px;
-    background-color: white; /* Белый фон */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Логотип */
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Расстояние между логотипом и текстом */
+    gap: 10px;
 }
 
 .logo-image {
@@ -29,10 +32,11 @@
     font-weight: 800;
 }
 
+/* Offcanvas меню для мобильных устройств */
 .full-screen-menu .offcanvas {
-    width: 100% !important; /* Перекрыть всю ширину */
-    height: 100% !important; /* Перекрыть всю высоту */
-    background-color: #fff; /* Фон меню */
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #fff;
 }
 
 .full-screen-menu .offcanvas-header {
@@ -44,8 +48,10 @@
     font-weight: bold;
     color: var(--textColor);
     text-decoration: none;
+    padding: 10px 0;
 }
 
+/* Кнопка для мобильных устройств */
 .navbar-toggler {
     border: none;
 }
@@ -54,9 +60,37 @@
     box-shadow: none;
 }
 
+/* Навигация для больших экранов */
+.d-lg-flex {
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.menu-item {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--textColor);
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    color: var(--footerColor);
+    text-decoration: none;
+}
+
+/* Скрываем Offcanvas на больших экранах */
+.d-lg-none {
+    display: none !important;
+}
 
 @media (max-width: 992px) {
     .menu-item {
-        font-size: 16px; /* Уменьшаем текст для мобильных */
+        font-size: 16px;
+    }
+    .d-lg-none {
+        display: block !important;
+    }
+    .d-lg-flex {
+        display: none !important;
     }
 }
