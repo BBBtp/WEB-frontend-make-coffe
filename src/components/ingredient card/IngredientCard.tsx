@@ -30,12 +30,7 @@ function IngredientCard( {ingredient}) {
                     </Card.Text>
                     <div className="d-flex justify-content-between flex-row align-items-center">
                         <h6>{ingredient.price} ₽/ {ingredient.unit}</h6>
-                        <Button
-                            variant="success"
-                            className="custom-button d-flex align-items-center gap-1"
-                        >
-                            Добавить
-                        </Button>
+
                     </div>
                 </Card.Body>
             </Card>
