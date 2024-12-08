@@ -8,9 +8,10 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "jsx": "react-jsx",
-    "composite": true
+    "composite": true,
+
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*","/iconCoffee.png","/img.png"],
   "references": [
     {
       "path": "./tsconfig.app.json"
