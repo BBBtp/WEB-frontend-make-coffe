@@ -20,8 +20,9 @@
 
     "deploy": "gh-pages -d dist",
 
-    "clean": "rm -rf dist dist-node"
+    "clean": "rm -rf dist dist-node",
 
+    "tauri": "tauri"
   },
 
   "dependencies": {
@@ -51,6 +52,10 @@
   "devDependencies": {
 
     "@eslint/js": "^9.13.0",
+
+    "@tauri-apps/api": "^2.1.1",
+
+    "@tauri-apps/cli": "^2.1.0",
 
     "@types/node": "^22.10.1",
 

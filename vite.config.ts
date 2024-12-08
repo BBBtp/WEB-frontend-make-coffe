@@ -33,7 +33,7 @@ export default defineConfig({
       manifest:{
         name: "Чашка Кофе",
         short_name: "Чашка Кофе",
-        start_url: "/WEB-frontend-make-coffe/",
+        start_url: "/WEB-frontend-make-coffe",
         display: "standalone",
         background_color: "#ffffff",
         theme_color: "#573821",
@@ -54,5 +54,5 @@ export default defineConfig({
         ]
       }
     })],
-  base: "/WEB-frontend-make-coffe/",
+  base: "/WEB-frontend-make-coffe",
 });
