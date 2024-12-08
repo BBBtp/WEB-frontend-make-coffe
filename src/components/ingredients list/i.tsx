@@ -1,9 +1,9 @@
 import { Col, Container, Row } from "react-bootstrap";
-import IngredientCard from "../ingredient card/IngredientCard.tsx";
+import IngredientCard from "../ingredient card/IngredientCard";
 import { useEffect } from "react";
 import { useSearch } from "../../contexts/SearchContext";
-import Breadcrumbs from "../bread crumbs/BreadCrumbs.tsx";
-import { api } from "../../modules/coffeApi.ts";
+import Breadcrumbs from "../bread crumbs/BreadCrumbs";
+import { api } from "../../modules/coffeApi";
 import Search from "../search/Search";
 
 function I() {
@@ -16,7 +16,13 @@ function I() {
                 dispatch({ type: SEARCH_ACTIONS.SET_RESULTS, payload: data.ingredients || [] });
             } catch (err) {
                 console.error(err);
-                dispatch({ type: SEARCH_ACTIONS.SET_ERROR, payload: err.message });
+
+                // Проверяем, является ли ошибка объектом с сообщением
+                if (err instanceof Error) {
+                    dispatch({ type: SEARCH_ACTIONS.SET_ERROR, payload: err.message });
+                } else {
+                    dispatch({ type: SEARCH_ACTIONS.SET_ERROR, payload: "Неизвестная ошибка" });
+                }
             }
         };
 

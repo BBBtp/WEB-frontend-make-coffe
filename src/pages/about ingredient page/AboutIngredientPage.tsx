@@ -3,19 +3,32 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { api } from '../../modules/coffeApi';
 import { Container, Spinner } from "react-bootstrap";
-import Breadcrumbs from "../../components/bread crumbs/BreadCrumbs.tsx";
+import Breadcrumbs from "../../components/bread crumbs/BreadCrumbs";
 import placeholder from '../../assets/Social Media Icons (Community)/camera.svg'
+
+type Ingredient = {
+    ingredient_name: string;
+    image_url: string;
+    price: number;
+    unit: string;
+    description: string;
+};
 function AboutIngredientPage() {
-    const { id } = useParams(); // Извлекаем id из URL
-    const [ingredient, setIngredient] = useState(null);
+    const { id } = useParams();
+    const [ingredient, setIngredient] = useState<Ingredient | null>(null);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchIngredient = async () => {
+            if (!id) {
+                setError("Ингредиент не найден");
+                setLoading(false);
+                return;
+            }
             try {
                 const data = await api.getIngredient(id);
-                setIngredient(data); // Устанавливаем данные ингредиента
+                setIngredient(data);
             } catch (err) {
                 console.error("Ошибка загрузки ингредиента:", err);
                 setError("Не удалось загрузить данные об ингредиенте");

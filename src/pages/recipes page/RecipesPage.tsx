@@ -1,7 +1,7 @@
 import './recipes page.css'
 import {StrictMode} from "react";
 import {Button, Container, Form} from "react-bootstrap";
-import RecipeCard from "../../components/recipe card/RecipeCard.tsx";
+import RecipeCard from "../../components/recipe card/RecipeCard";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function RecipesPage() {

@@ -1,20 +1,27 @@
 import './ingredientCard.css'
-import {Button, Card, Row} from "react-bootstrap";
-import {Placeholder} from "react-bootstrap";
-import PImg from './../../assets/1.png'
+import {Button, Card} from "react-bootstrap";
 import {motion} from "framer-motion";
 import {Link} from "react-router-dom";
 import placeholder from '../../assets/Social Media Icons (Community)/camera.svg'
-function IngredientCard( {ingredient}) {
+
+interface Ingredient {
+    id: number;
+    ingredient_name: string;
+    description: string;
+    price: number;
+    unit: string;
+    image_url: string;
+}
+function IngredientCard({ ingredient }: { ingredient: Ingredient }) {
     return (
         <motion.div
             className="card-wrapper"
             whileHover={{ scale: 1.02 }} // Масштаб при наведении
             transition={{ type: "spring", stiffness: 300, damping: 15 }} // Плавный эффект
         >
-            <Card className="card text-decoration-none" as={Link} to={`/ingredients/${ingredient.id}`}>
+            <Card className="card text-decoration-none" as={Link as any} to={`/ingredients/${ingredient.id}`}>
                 <div className="justify-content-center text-center">
-                    <Card.Img variant="top" src={ingredient.image_url || {placeholder}} className="w-75" />
+                    <Card.Img variant="top" src={ingredient.image_url || placeholder} className="w-75" />
                 </div>
                 <Card.Body>
                     <Card.Title

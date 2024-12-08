@@ -1,20 +1,17 @@
-import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
-import Header from "./components/header/Header.tsx";
-import PromoPage from "./pages/promo page/PromoPage.tsx";
-import IngredientPage from "./pages/ingredient page/IngredientPage.tsx";
-import RecipesPage from "./pages/recipes page/RecipesPage.tsx";
-import AboutIngredientPage from "./pages/about ingredient page/AboutIngredientPage.tsx";
-import Footer from "./components/footer/Footer.tsx";
-import Breadcrumbs from "./components/bread crumbs/BreadCrumbs.tsx";
-import {SearchProvider} from "./contexts/SearchContext.tsx";
+import {Route, Routes, BrowserRouter} from "react-router-dom";
+import Header from "./components/header/Header";
+import PromoPage from "./pages/promo page/PromoPage";
+import IngredientPage from "./pages/ingredient page/IngredientPage";
+import AboutIngredientPage from "./pages/about ingredient page/AboutIngredientPage";
+import Footer from "./components/footer/Footer";
+import {SearchProvider} from "./contexts/SearchContext";
 
 function App() {
     return(
-        <Router>
+        <BrowserRouter basename={"/WEB-frontend-make-coffe"}>
             <div className="d-flex flex-column min-vh-100">
                 <SearchProvider>
                 <Header/>
-
                 <Routes>
                     <Route  path="/" element={<PromoPage />} />
                     <Route path="/ingredients" element={<IngredientPage/>}/>
@@ -24,7 +21,7 @@ function App() {
                 <Footer/>
                 </SearchProvider>
             </div>
-        </Router>
+        </BrowserRouter>
     )
 }
 

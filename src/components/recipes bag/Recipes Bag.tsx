@@ -5,11 +5,11 @@ import {Button} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {useState} from "react";
 function RecipesBag() {
-    const [cartCount, setCartCount] = useState(2);
+    const [cartCount] = useState(2);
     return (
         <div className={'shop'}>
             <Button  variant={'success'} className={'custom-button-shop'}
-            as={Link} to={'/recipes'}
+            as={Link as any} to={'/recipes'}
             >
                 <img  src={ShopImg}  className={'w-100'} alt={'ShopImg'}></img>
                 {cartCount > 0 && (

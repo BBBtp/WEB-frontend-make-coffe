@@ -1,4 +1,4 @@
-import { mockIngredients } from '../mock services/mockData.ts'; // Импорт моков
+import { mockIngredients } from '../mock services/mockData'; // Импорт моков
 
 const API_PREFIX = '/api/'; // Префикс для проксированных запросов
 
@@ -15,8 +15,8 @@ export const api = {
             params.ingredient_name = searchQuery; // Добавляем параметр поиска, если он есть
         }
 
-        const queryString = new URLSearchParams(params).toString(); // Генерируем строку запроса
-        const url = `${API_PREFIX}ingredients/?${queryString}`; // Используем относительный путь
+        const queryString = new URLSearchParams(params as Record<string, string>).toString();
+        const url = `${API_PREFIX}ingredients/?${queryString}`;
 
         try {
             const response = await fetch(url, {
@@ -32,9 +32,12 @@ export const api = {
 
             const data = await response.json(); // Парсим JSON
             return data; // Возвращаем данные
-        } catch (error) {
-            console.error("Ошибка получения ингредиентов с сервера:", error.message);
-            console.warn("Возвращаем данные из mock-объектов");
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                console.error("Ошибка получения ингредиентов с сервера:", error.message);
+            } else {
+                console.error("Неизвестная ошибка при получении ингредиентов");
+            }
 
             // Фильтруем мок-данные на основе строки поиска
             const filteredMocks = searchQuery
@@ -68,9 +71,12 @@ export const api = {
 
             const data = await response.json(); // Парсим JSON
             return data; // Возвращаем данные
-        } catch (error) {
-            console.error("Ошибка получения ингредиента с сервера:", error.message);
-            console.warn("Возвращаем данные из mock-объектов для ингредиента");
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                console.error("Ошибка получения ингредиента с сервера:", error.message);
+            } else {
+                console.error("Неизвестная ошибка при получении ингредиента");
+            }
 
             // Если ошибка при запросе, ищем в mock-данных по id
             const ingredient = mockIngredients.find((item) => item.id === parseInt(id));

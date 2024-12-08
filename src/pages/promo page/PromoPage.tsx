@@ -1,5 +1,5 @@
 import './promoPage.css';
-import { Container, Row, Col } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import { motion } from "framer-motion";
 import leftHandImg from '../../assets/promo/Group 2.svg';
 

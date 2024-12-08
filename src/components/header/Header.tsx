@@ -20,7 +20,7 @@ function Header() {
             <Navbar expand="lg" className="sticky-header" collapseOnSelect>
                 <Container fluid className="d-flex justify-content-between px-3 px-md-5">
                     {/* Логотип */}
-                    <Navbar.Brand as={Link} to={'/'}>
+                    <Navbar.Brand as={Link as any} to={'/'}>
                         <motion.div custom={1} variants={logoAnimation} className="logo-container">
                             <motion.img src={logoImg} alt="Logo" className="logo-image" />
                             <motion.div className="logo-text">
@@ -32,7 +32,7 @@ function Header() {
 
                     {/* Навигация для больших экранов */}
                     <Nav className="d-none d-lg-flex gap-3 justify-content-end align-items-center">
-                        <Nav.Link as={Link} to="/ingredients" className="menu-item">
+                        <Nav.Link as={Link as any} to="/ingredients" className="menu-item">
                             <Button variant={'success'} className={'custom-button'}>
                                 Ингредиенты
                             </Button>
@@ -62,7 +62,7 @@ function Header() {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="flex-column gap-3 align-items-start">
-                                <Nav.Link as={Link} to="/ingredients" className="menu-item" onClick={closeMenu}>
+                                <Nav.Link as={Link as any} to="/ingredients" className="menu-item" onClick={closeMenu}>
                                     Ингредиенты
                                 </Nav.Link>
                             </Nav>
