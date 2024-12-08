@@ -1,50 +1,33 @@
-# React + TypeScript + Vite
+# Чашка Кофе (React + TypeScript + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Добро пожаловать в проект **Чашка Кофе** — простое нативное приложение, разработанное с использованием React, TypeScript и Vite. Оно предназначено для удобного выбора и фильтрации ингредиентов для вашего любимого кофе.
 
-Currently, two official plugins are available:
+## О приложении
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Приложение состоит из трёх страниц с удобным интерфейсом, красивыми изображениями ингредиентов и возможностью фильтрации. **Чашка Кофе** подключается к API через IP-адрес в локальной сети, что обеспечивает актуальность данных и быструю работу.
 
-## Expanding the ESLint configuration
+### Особенности
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Фильтрация ингредиентов**: Удобный поиск и выбор компонентов для приготовления кофе.
+- **Красивый интерфейс**: Приложение адаптировано для мобильных устройств и может быть установлено на главный экран.
+- **Локальная сеть**: Использует API, работающий по локальному IP, а не `localhost`.
+- **Поддержка PWA**: Может работать в автономном режиме при установке на устройство.
 
-- Configure the top-level `parserOptions` property like this:
+## Используемые технологии
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **React**: Для создания динамичных пользовательских интерфейсов.
+- **TypeScript**: Для статической типизации и повышения надёжности кода.
+- **Vite**: Для быстрого старта разработки и сборки.
+- **Tauri**: Для создания нативного приложения.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Установка и запуск
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Установка зависимостей
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Для работы с проектом убедитесь, что у вас установлены следующие инструменты:
+
+- **Node.js**: v20.11.1 или выше
+- **npm**: v10.2.4 или выше
+- **Rust и Cargo**: Для работы с Tauri (установите через [rustup](https://rustup.rs/))
+
+
