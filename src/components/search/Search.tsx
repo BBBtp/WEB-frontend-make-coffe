@@ -1,17 +1,14 @@
-import './search.css';
-import { Button, Container, Form } from "react-bootstrap";
+import { useState } from "react";
+import { Container, Form, Button } from "react-bootstrap";
+import { useSearch } from "../../contexts/SearchContext";
 import SearchImg from '../../assets/search.svg';
-import { useState } from 'react'; // Импортируем useState
+import './search.css'
+function Search() {
+    const { state, dispatch, SEARCH_ACTIONS } = useSearch();
+    const [searchTerm, setSearchTerm] = useState(state.query); // Инициализируем из глобального состояния
 
-function Search({ onSearch }) {
-    const [searchTerm, setSearchTerm] = useState(''); // Локальное состояние для текста поиска
-
-    const handleSearch = (e) => {
-        setSearchTerm(e.target.value); // Сохраняем значение поля поиска
-    };
-
-    const handleSubmit = () => {
-        onSearch(searchTerm); // Передаём значение после нажатия кнопки
+    const handleSearch = () => {
+        dispatch({ type: SEARCH_ACTIONS.SET_QUERY, payload: searchTerm }); // Обновляем глобальное состояние
     };
 
     return (
@@ -20,13 +17,19 @@ function Search({ onSearch }) {
                 type="text"
                 placeholder="Поиск по каталогу..."
                 className="search"
-                value={searchTerm} // Управляем значением поля
-                onChange={handleSearch} // Обновляем состояние при изменении текста
+                value={searchTerm} // Локальное состояние
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                        e.preventDefault();
+                        handleSearch();
+                    }
+                }}
             />
             <Button
                 variant="success"
                 className="custom-button-shop"
-                onClick={handleSubmit} // Фильтрация будет происходить только по клику на кнопку
+                onClick={handleSearch}
             >
                 <img src={SearchImg} className="w-100" alt="SearchImg" />
             </Button>
