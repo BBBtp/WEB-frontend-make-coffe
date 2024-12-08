@@ -21,7 +21,7 @@ function IngredientCard({ ingredient }: { ingredient: Ingredient }) {
         >
             <Card className="card text-decoration-none" as={Link as any} to={`/ingredients/${ingredient.id}`}>
                 <div className="justify-content-center text-center">
-                    <Card.Img variant="top" src={ingredient.image_url || placeholder} className="w-75" />
+                    <Card.Img variant="top" src={ingredient.image_url as string || placeholder as string} className="w-75" />
                 </div>
                 <Card.Body>
                     <Card.Title

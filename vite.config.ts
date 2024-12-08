@@ -12,6 +12,7 @@ export default defineConfig({
       key: fs.readFileSync(path.resolve(__dirname, 'cert.key')),
       cert: fs.readFileSync(path.resolve(__dirname, 'cert.crt')),
     },
+    host: '0.0.0.0',
     port: 3000,
     proxy: {
       // Проксирование запросов, начинающихся с /api
@@ -26,10 +27,13 @@ export default defineConfig({
   plugins: [react(),
     mkcert(),
     VitePWA({ registerType: 'autoUpdate',
+      devOptions: {
+        enabled: true,
+      },
       manifest:{
         name: "Чашка Кофе",
         short_name: "Чашка Кофе",
-        start_url: "/",
+        start_url: "/WEB-frontend-make-coffe/",
         display: "standalone",
         background_color: "#ffffff",
         theme_color: "#573821",
@@ -50,5 +54,5 @@ export default defineConfig({
         ]
       }
     })],
-  base: "/WEB-frontend-make-coffe",
+  base: "/WEB-frontend-make-coffe/",
 });
