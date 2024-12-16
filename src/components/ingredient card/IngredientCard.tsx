@@ -1,8 +1,9 @@
 import './ingredientCard.css'
-import {Button, Card} from "react-bootstrap";
+import { Card} from "react-bootstrap";
 import {motion} from "framer-motion";
 import {Link} from "react-router-dom";
 import placeholder from '../../assets/Social Media Icons (Community)/camera.svg'
+import {dest_img} from "../../../target_config";
 
 interface Ingredient {
     id: number;
@@ -21,7 +22,12 @@ function IngredientCard({ ingredient }: { ingredient: Ingredient }) {
         >
             <Card className="card text-decoration-none" as={Link as any} to={`/ingredients/${ingredient.id}`}>
                 <div className="justify-content-center text-center">
-                    <Card.Img variant="top" src={ingredient.image_url as string || placeholder as string} className="w-75" />
+                    <Card.Img
+                        variant="top"
+                        src={ingredient.image_url ? `${ingredient.image_url}` : placeholder as string}
+                        className="w-75"
+                        alt="Ingredient Image"
+                    />
                 </div>
                 <Card.Body>
                     <Card.Title

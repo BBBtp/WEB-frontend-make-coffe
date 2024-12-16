@@ -5,6 +5,7 @@ import { api } from '../../modules/coffeApi';
 import { Container, Spinner } from "react-bootstrap";
 import Breadcrumbs from "../../components/bread crumbs/BreadCrumbs";
 import placeholder from '../../assets/Social Media Icons (Community)/camera.svg'
+import {dest_img} from "../../../target_config";
 
 type Ingredient = {
     ingredient_name: string;
@@ -64,7 +65,7 @@ function AboutIngredientPage() {
             </Container>
         );
     }
-    const imageUrl = ingredient.image_url || placeholder;
+    const imageUrl = ingredient.image_url ? `${ingredient.image_url}` : placeholder;
     return (
         <Container className="py-5">
             <Breadcrumbs />
@@ -72,7 +73,7 @@ function AboutIngredientPage() {
                 <div className="col-md-6">
 
                     <img
-                        src={imageUrl}
+                        src={imageUrl as string}
                         alt={ingredient.ingredient_name}
                         className="img-fluid"
                     />

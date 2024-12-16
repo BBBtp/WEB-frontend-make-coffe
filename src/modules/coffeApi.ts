@@ -1,6 +1,5 @@
 import { mockIngredients } from '../mock services/mockData'; // Импорт моков
-
-const API_PREFIX = '/api/'; // Префикс для проксированных запросов
+import { dest_api } from "../../target_config"; // Импорт адресов из target_config
 
 interface GetIngredientsParams {
     ingredient_name?: string;
@@ -16,7 +15,7 @@ export const api = {
         }
 
         const queryString = new URLSearchParams(params as Record<string, string>).toString();
-        const url = `${API_PREFIX}ingredients/?${queryString}`;
+        const url = `${dest_api}/ingredients/?${queryString}`; // Используем dest_api
 
         try {
             const response = await fetch(url, {
@@ -55,7 +54,7 @@ export const api = {
 
     // Получение конкретного ингредиента по ID
     async getIngredient(id: string) {
-        const url = `${API_PREFIX}ingredients/${id}/`; // Используем относительный путь
+        const url = `${dest_api}/ingredients/${id}/`; // Используем dest_api
 
         try {
             const response = await fetch(url, {

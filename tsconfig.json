@@ -11,7 +11,9 @@
     "composite": true,
 
   },
-  "include": ["src/**/*","/iconCoffee.png","/img.png"],
+  "include": ["src/**/*","/iconCoffee.png","/img.png",
+    "./target_config.ts"
+  ],
   "references": [
     {
       "path": "./tsconfig.app.json"

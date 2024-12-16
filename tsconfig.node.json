@@ -19,5 +19,5 @@
     "declarationMap": true,
     "outDir": "./dist-node"
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts" ,"target_config.ts"]
 }

@@ -1,4 +1,4 @@
-import {Route, Routes, BrowserRouter} from "react-router-dom";
+import {Route, Routes, HashRouter, BrowserRouter} from "react-router-dom";
 import Header from "./components/header/Header";
 import PromoPage from "./pages/promo page/PromoPage";
 import IngredientPage from "./pages/ingredient page/IngredientPage";
@@ -7,6 +7,7 @@ import Footer from "./components/footer/Footer";
 import {SearchProvider} from "./contexts/SearchContext";
 import { invoke } from "@tauri-apps/api/core";
 import {useEffect} from "react";
+import {dest_root} from "../target_config";
 function App() {
     useEffect(()=>{
         invoke('tauri', {cmd:'create'})
@@ -19,7 +20,7 @@ function App() {
         }
     }, [])
     return(
-        <BrowserRouter basename={"/WEB-frontend-make-coffe"}>
+        <BrowserRouter basename={dest_root}>
             <div className="d-flex flex-column min-vh-100">
                 <SearchProvider>
                 <Header/>

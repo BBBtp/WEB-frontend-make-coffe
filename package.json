@@ -23,6 +23,7 @@
     "clean": "rm -rf dist dist-node",
 
     "tauri": "tauri"
+
   },
 
   "dependencies": {
@@ -44,6 +45,8 @@
     "react-dom": "^18.3.1",
 
     "react-router-dom": "^6.28.0",
+
+    "tauri-plugin-reqwest": "^0.0.4",
 
     "vite-plugin-mkcert": "^1.17.6"
 
