@@ -5,7 +5,7 @@
   "identifier": "com.bogdan.makecoffee",
   "build": {
     "frontendDist": "../dist",
-    "devUrl": "https://localhost:3000/WEB-frontend-make-coffe/",
+    "devUrl": "http://localhost:3000/WEB-frontend-make-coffe/",
     "beforeDevCommand": "npm run dev",
     "beforeBuildCommand": "npm run build"
   },
